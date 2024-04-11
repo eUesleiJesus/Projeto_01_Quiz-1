@@ -1,0 +1,235 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+
+    background: #001e4d;
+}
+
+/* estilo do cabeçalho e navegação */
+.header{
+    position: fixed;
+    width: 100%;
+    background: purple;
+    padding: 20px 0 0 0;
+    text-align: left;
+    border-bottom: 1px solid #333;
+    display: flex;    
+    justify-content: space-between;
+    transition: .3s;
+
+
+}
+
+
+.header-logo{
+    margin-top: 10px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 25px;    
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px #333;
+    margin-left: 40px; 
+}
+
+.header-nav a{
+    text-decoration: none;
+    color:#fff;
+    margin-top: 10px;
+    float: right;
+    margin-right: 40px; 
+    display: flex;    
+    justify-content: space-between;
+    font-weight: 400;
+}
+
+.header-nav a:hover, .header-logo:hover, a.ativado, .ativado{
+    color: yellow ; 
+}
+
+a.ativado:hover{
+    color: orange
+    ;
+    text-shadow: whitesmoke;
+}
+
+/* tela e apresentação */
+
+.apresentacao{
+    background: #001e4d;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    text-align: center;
+    
+}
+
+.caixa{
+    background: purple;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #333;
+
+}
+
+
+.title{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 2px #333;
+}
+
+/* botão de início */
+#btn-start{
+    background: #001e4d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    margin-top: 20px;
+    font-weight: 500;
+    border: 1px solid #222;
+    transition: all 0.3s;
+}
+
+#btn-start:hover{
+    background: #222;
+    color: #fff;
+}
+
+
+/* tela do quiz */
+
+.screen-quiz {
+    background: aquamarine ;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+/* logo do quiz */
+.screen-quiz h1{
+    width: 25%;
+    font-size: 25px;
+    color: #001e4d;
+    font-weight: 700;
+    padding-bottom: 5px;
+    text-shadow: 0px 0px 3px white;
+    transition: .5s;
+}
+
+.screen-quiz h1:hover{
+    color: white;
+    text-shadow: 0 0 2px black;
+}
+
+.quiz{
+    padding: 20px 0;
+}
+
+/* perguntas */
+.quiz h2{
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px dotted #333;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+}
+
+/* botão das respostas */
+
+.btn{
+    font-size: 12px;
+    background: #fff;
+    color: #222;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+    font-weight: 500;
+    border: 1px solid #222;
+    width: 100%;
+    text-align: left;
+    transition: all 0.5s;
+}
+
+/* resposta correta */
+.correct{
+    background: #6ae39f;
+    border: #fff;
+    box-shadow: 10px 0 10px green;
+    color : #001e4d;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+/* resposta errada */
+
+.incorrect{
+    background: #ff9393;
+    border: #fff;
+    box-shadow: 10px 0 10px red;
+    color: #001e4d;
+}
+
+
+.btn:hover:not([disabled]){
+    background: #222;
+    color: #fff;
+}
+
+/* desabilitar botão */
+.btn:disabled{
+    cursor: no-drop;
+}
+
+/* botão de próxima pergunta */
+#next-btn{
+    background: #001e4d;
+    color: #fff;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto 0;
+    font-weight: 500;
+    width: 150px;
+    cursor: pointer;
+    transition: .5s;
+    display: none;
+    
+}
+
+/* botão de sair */
+
+
+
+#idQuestion{
+    font-size: 14px;
+    color: #001e4d;
+    font-weight: 600;
+    float: right;
+    margin-top: 20px;
+}
+
+/* ocultar uma screen */
+.hide{
+    display: none;
+}
