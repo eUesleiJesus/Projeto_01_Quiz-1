@@ -85,6 +85,8 @@ const header = document.querySelector(".header");
 const apresentacao = document.querySelector(".apresentacao");
 const screnQuiz = document.querySelector(".screen-quiz");
 const nextButton = document.getElementById("next-btn");
+const idQuestion = document.getElementById("idQuestion");
+const idScore = document.getElementById("idScore");
 
 
 const questionElement = document.getElementById("question");
@@ -120,6 +122,7 @@ function showQuestion() {
     // indice das questões
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
+    let currentScore = score;
 
     // titulo da questão
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
@@ -136,7 +139,11 @@ function showQuestion() {
 
     // mostrar numero de questões //
     document.getElementById("idQuestion").innerHTML = "Questão " + questionNo + " de " + questions.length;
+    idQuestion.classList.remove("hide")
 
+    // mostrar pontuação //
+    document.getElementById("idScore").innerHTML = "Pontuação: " + currentScore ;
+    
 }
 
 // função para resetar o estado do botão //
@@ -154,11 +161,18 @@ function selectAnswer(e) {
     const isCorrect = selectedBtn.dataset.correct === "true";
     if(isCorrect){
         selectedBtn.classList.add("correct");
+        if(score < 1){
+            document.getElementById("idScore").innerHTML = " Você ACERTOU! Mafagatullllll  Você Fez " + (score + 1)  + "  Ponto";
+        }else{
+            document.getElementById("idScore").innerHTML = " Você ACERTOU! Mafagatullllll  Você tem " + (score + 1)  + "  Pontos";
+        }
         //incrementar a pontuação //
         score++;
     }else{
         selectedBtn.classList.add("incorrect");
     }
+    
+    
 
     // desabilitar os botões //
     Array.from(answerButtons.children).forEach(button => {
@@ -175,7 +189,21 @@ function selectAnswer(e) {
 // função para mostrar a pontuação //
 function showScore() { 
     resetState();
+
     questionElement.innerHTML = `Você acertou ${score} de ${questions.length}`;
+    if(score <= 1){
+        document.getElementById("idScore").innerHTML = "Você não sabe nada sobre mafagafos";
+    }else if(score <= 3){
+        document.getElementById("idScore").innerHTML = "Você fez: " + score + " Pontos " + " Você ainda tem muito o que aprender sobre mafagafos";
+    }else if(score <= 6){
+        document.getElementById("idScore").innerHTML = "Você fez: " + score + " Pontos " + " Você está no caminho certo, continue assim!";
+    }else if (score <= 7){
+        document.getElementById("idScore").innerHTML = "Você fez: " + score + "Pontos " + " Você é um verdadeiro mafagaceiro";
+    }
+    
+    idQuestion.classList.add("hide");
+
+
 
     //reiniciar o jogo
     nextButton.innerHTML = "Jogar novamente";
@@ -189,6 +217,7 @@ function handleNextButton() {
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
         showQuestion();
+
     }else{
         showScore();
     }

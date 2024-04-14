@@ -167,7 +167,7 @@ a.ativado:hover{
     border: 1px solid #222;
     width: 100%;
     text-align: left;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 /* resposta correta */
@@ -176,8 +176,8 @@ a.ativado:hover{
     border: #fff;
     box-shadow: 10px 0 10px green;
     color : #001e4d;
-    font-weight: 800;
-    font-size: 14px;
+    font-weight: 600;
+    font-size: 12px;
 }
 
 /* resposta errada */
@@ -221,7 +221,7 @@ a.ativado:hover{
 
 
 
-#idQuestion{
+#idQuestion {
     font-size: 14px;
     color: #001e4d;
     font-weight: 600;
@@ -229,7 +229,16 @@ a.ativado:hover{
     margin-top: 20px;
 }
 
+#idScore {
+    font-size: 14px;
+    color: #001e4d;
+    font-weight: 600;
+    float: left;
+    margin-top: 20px;
+}
+
 /* ocultar uma screen */
 .hide{
     display: none;
 }
+
